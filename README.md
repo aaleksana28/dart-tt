@@ -1,16 +1,6 @@
-# example
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> Из - за того, что в программированиии небольшой опыт, а в Dart/Flutter его нет со всем, с помощью видео уроков, документации смогла реализовать:
+1. Верстку 1 страницы. Не получилось правильно обрезать фотографию и не успела разобрать, как сделать адаптив. Также не получилось сделать кнопки прямоугольными со скруглёнными углами, они сразу получались круглыми. Не разобралась, как сделать отступ между иконкой и текстом.
+2. Выполнила переходы между страницами.
+3. Верстку страницы 2. Реализовала камеру, но она получилась с небольшим искажением.
+4. Реализовала переход на первую страницу. Вставила иконку повората экрана, не успела сделать ей функционал, а также вставить остальные кнопки.
+5. Жесты не успела сделать
