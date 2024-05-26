@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:example/photo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,13 +13,16 @@ class CreativeWindow extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             body: SafeArea(
-          child: MainContainer(),
+          child: MainContainer(
+            constraints:
+                BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
+          ),
         )));
   }
 }
 
 class MainContainer extends Container {
-  MainContainer({super.key});
+  MainContainer({super.key, super.constraints});
   @override
   Decoration? get decoration =>
       const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255));
@@ -76,18 +81,25 @@ class PageImage extends Row {
   const PageImage({super.key});
   @override
   List<Widget> get children => [
-        Container(
-          width: 335,
-          height: 335,
-          margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-          decoration: BoxDecoration(
-              image: const DecorationImage(
-                  image: AssetImage('assets/images/images.jpg'),
-                  fit: BoxFit.fill),
-              border: Border.all(color: const Color.fromARGB(0, 255, 255, 255)),
-              borderRadius: const BorderRadius.all(Radius.circular(20))),
-        )
+        ImageContainer(),
       ];
+}
+
+class ImageContainer extends Container {
+  ImageContainer({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 335,
+      height: 335,
+      margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+      decoration: BoxDecoration(
+          image: const DecorationImage(
+              image: AssetImage('assets/images/images.jpg'), fit: BoxFit.fill),
+          border: Border.all(color: const Color.fromARGB(0, 255, 255, 255)),
+          borderRadius: const BorderRadius.all(Radius.circular(20))),
+    );
+  }
 }
 
 class ChangeImageButton extends Row {
